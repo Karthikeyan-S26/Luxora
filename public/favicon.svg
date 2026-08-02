@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Metallic Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FFF4BC" />
+      <stop offset="30%" stopColor="#F5C754" />
+      <stop offset="70%" stopColor="#C9901C" />
+      <stop offset="100%" stopColor="#8A5A00" />
+    </linearGradient>
+
+    <linearGradient id="sparkleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FFFFFF" />
+      <stop offset="50%" stopColor="#F5C754" />
+      <stop offset="100%" stopColor="#C9901C" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Disc Background -->
+  <circle cx="50" cy="50" r="48" fill="#0C0C0E" stroke="#F5C754" stroke-width="2.5" />
+
+  <!-- Serif 'L' -->
+  <path d="M 33 18 C 30 18 26 19 24 20 L 25 24 C 28 23 31 23 35 23 V 68 C 35 73 38 76 46 76 H 58 C 63 76 67 74 69 70 L 71 72 C 68 77 61 80 52 80 C 37 80 32 73 32 63 V 23 C 28 23 25 23 23 24 L 24 20 C 26 19 30 18 33 18 Z" fill="url(#goldGrad)" />
+
+  <!-- Crescent Arch -->
+  <path d="M 52 79 C 71 79 82 64 79 45 C 77 35 70 27 61 24 C 60 23 61 25 62 27 C 69 32 73 41 71 51 C 68 63 57 72 44 73 C 48 77 50 79 52 79 Z" fill="url(#goldGrad)" />
+
+  <!-- 4-Point Sparkle Star -->
+  <path d="M 63 35 C 63 41 60 44 54 44 C 60 44 63 47 63 53 C 63 47 66 44 72 44 C 66 44 63 41 63 35 Z" fill="url(#sparkleGrad)" />
+</svg>

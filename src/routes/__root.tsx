@@ -4,12 +4,8 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
-import { type ReactNode } from "react";
 
-import appCss from "../styles.css?url";
 import { AppProvider } from "@/providers/AppProvider";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -48,7 +44,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         </div>
         <h1 className="text-2xl font-bold text-foreground">Application Error</h1>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          An unexpected error occurred while processing this page. You can attempt to refresh or return to safety.
+          An unexpected error occurred. You can attempt to refresh or return to safety.
         </p>
         <div className="flex justify-center gap-3 pt-2">
           <Button
@@ -77,45 +73,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}` },
-      {
-        name: "description",
-        content: SITE_CONFIG.description,
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "shortcut icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "apple-touch-icon", href: "/favicon.svg" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap",
-      },
+      { name: "description", content: SITE_CONFIG.description },
     ],
   }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en" className="dark">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
